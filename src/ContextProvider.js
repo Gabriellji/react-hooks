@@ -9,8 +9,11 @@ const initialState = {
 
 const ContextProvider = (props) => {
   const [state, setState] = useState(initialState);
+
+  const showSurname = () => state.surname;
+  
   return (
-    <MyContext.Provider value={{ state, setState }}>
+    <MyContext.Provider value={{ state, setState, showSurname }}>
       {props.children}
     </MyContext.Provider>
   );
